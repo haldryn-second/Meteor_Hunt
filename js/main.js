@@ -111,7 +111,6 @@ function reanudar() {
         for (i = 1; i < asteroids.length; i++) {
             asteroid = asteroids[i];
             cuentatras[asteroid.id] = window.setTimeout(function() {
-                alert("sababo");
                 pausar();
                 game_over();
             }, 5000);
