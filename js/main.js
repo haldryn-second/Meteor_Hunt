@@ -87,6 +87,7 @@ function pausar() {
     clearInterval(puntuacion);
     clearInterval(intervalo);
     asteroids = document.getElementsByTagName("img");
+    puntos = puntos / 2;
     for (i = 0; i < asteroids.length; i++) {
         asteroid = asteroids[i];
         clearInterval(cuentatras[asteroid.id])
@@ -102,14 +103,17 @@ function reanudar() {
         document.getElementById("separador").style.display = "none";
         puntuacion = setInterval(sumarpuntos, 500);
         intervalo = setInterval(create_asteroid, tiempo);
-        asteroids = document.getElementsByTagName("img")
-        for (i = 0; i < asteroids.length; i++) {
+        asteroids = document.getElementsByTagName("img");
+
+        for (i = 1; i < asteroids.length; i++) {
             asteroid = asteroids[i];
             cuentatras[asteroid.id] = window.setTimeout(function() {
+                alert("sababo");
                 pausar();
                 game_over();
             }, 5000);
             asteroid.style.animationPlayState = "running";
+            pause = false;
         }
     }
 }
@@ -139,6 +143,7 @@ function sumarpuntos() {
 
 //Función que detiene el conteo de puntos y comprueba la puntuación final: de ser mayor a la máxima del usuario la registra como su mejor record. Tras unos segundos vuelve a la pantalla de inicio
 function game_over() {
+    puntos = puntos * 2;
     document.getElementById("imagen_rota").style.display = "inline"
     clearInterval(puntuacion);
     document.getElementById("game_over").style.display = "inline";
