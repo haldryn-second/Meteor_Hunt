@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>MeteorHunt - Menú</title>
+</head>
+
+<body>
+    <h1>METEOR HUNT</h1>
+    <div class="container">
+        <div id="reg">
+            <form action="Main.html" method="get" onsubmit="return validar()">
+                <label>USUARIO</label><br>
+                <input id="nom_usu" type="text" size="3" maxlength="3" placeholder="[AAA]" /><br>
+                <label>CONTRASEÑA</label><br>
+                <input id="passw" type="password" placeholder="Min 6 carácteres: 1 mayúscula - 1 minúscula - 1 número" /><br>
+                <label>CORREO</label><br>
+                <input id="correo" type="text" placeholder="correo@dominio.extension" /><br>
+                <br>
+                <button type="submit">¡Registrar jugador!</button><br>
+                <button type="button" onclick="reg_ing(1)">¿Ya estás registrado?</button><br>
+                <label id="label_reg"></label>
+            </form>
+
+        </div>
+        <div id="ing" style="display: none">
+            <form action="Main.html" method="get" onsubmit="return buscar_usu()">
+                <label>USUARIO</label><br>
+                <input id="nom_usu_reg" type="text" placeholder="[AAA]" size="3" onkeypress="return letra_usu(event)" maxlength="3" /><br>
+                <label>CONTRASEÑA</label><br>
+                <input id="passw_usu_reg" type="password" onkeypress="return letra_pass(event)" placeholder="Min 6 carácteres: 1 mayúscula - 1 minúscula - 1 número" />
+                <br><br>
+                <button type="submit">Jugar</button><br>
+                <button type="button" onclick="reg_ing(2)">¿Aun no estás registrado?</button><br>
+                <label id="label_ing"></label>
+            </form>
+
+        </div>
+    </div>
+</body>
+<!-- <button onclick="mostrar_cook()">MOSTRAR COOKIES</button> -->
+
+</html>
+<script src="js/index.js"></script>

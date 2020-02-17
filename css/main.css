@@ -1,0 +1,87 @@
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/screenshot.png")
+}
+
+html {
+    height: 100%;
+    cursor: url("../img/scope.cur"), none;
+}
+
+#xaxis {
+    border-right: 2px solid red;
+    min-height: 100%;
+    position: fixed;
+}
+
+#yaxis {
+    border-bottom: 2px solid red;
+    min-width: 100%;
+    position: fixed;
+}
+
+.meteor {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
+}
+
+@keyframes movimiento {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    20% {
+        transform: rotate(250deg) scale(1.8);
+    }
+    40% {
+        transform: rotate(500deg) scale(2.6);
+    }
+    60% {
+        transform: rotate(750deg) scale(3.4);
+    }
+    80% {
+        transform: rotate(1000deg) scale(4.2);
+    }
+    100% {
+        transform: rotate(1250deg) scale(5);
+    }
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    -webkit-animation: movimiento 5s linear forwards;
+    -moz-animation: movimiento 5s linear forwards;
+    -ms-animation: movimiento 5s linear forwards;
+    -o-animation: movimiento 5s linear forwards;
+    animation: movimiento 5s linear forwards;
+}
+
+#imagen_rota {
+    width: 100%;
+    height: 100%;
+    animation: none;
+    display: none;
+}
+
+label {
+    color: red;
+    font-weight: 800;
+}
+
+#game_over,
+#pausado {
+    position: absolute;
+    text-align: center;
+    width: 300px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    background: red;
+}

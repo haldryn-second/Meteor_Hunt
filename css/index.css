@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Cyberspace';
+    src: url(../font/Cybers2.otf);
+}
+
+input[type="text"],
+input[type="password"] {
+    background: none;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    margin: 0.2em 0 0.4em 0;
+}
+
+div {
+    font-size: 1.2em;
+    background-color: #333;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    padding: 1em 0 1em 0;
+    border-radius: 30px;
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 0px 50px;
+    }
+}
+
+@-moz-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 0px 50px;
+    }
+}
+
+@-o-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 0px 50px;
+    }
+}
+
+@keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 0px 50px;
+    }
+}
+
+body {
+    /* display: flex;
+    justify-content: center; */
+    background: url("../img/fondo.png");
+    -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+    -moz-animation: bg-scrolling-reverse 0.92s infinite;
+    -o-animation: bg-scrolling-reverse 0.92s infinite;
+    animation: bg-scrolling-reverse 0.92s infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+.container {
+    width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0.4em;
+    width: 50%;
+    font-family: 'Cyberspace';
+    font-size: 4em;
+    background: rgb(0, 1, 255);
+    background: linear-gradient(180deg, rgba(0, 1, 255, 1) 13%, rgba(255, 0, 198, 1) 88%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#passw::placeholder,
+#passw_usu_reg::placeholder {
+    font-size: 0.4em;
+}
+
+input::placeholder {
+    font-size: 0.7em;
+}
+
+label:last-child {
+    color: red;
+    font-weight: 800;
+}
+
+button {
+    margin-bottom: 1em;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgb(67, 95, 255);
+    padding: 15px 40px;
+    border: 0;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    color: rgb(25, 255, 25);
+    cursor: pointer;
+    box-shadow: 0 0px 25px rgba(67, 95, 255, .9);
+}
