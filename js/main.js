@@ -6,6 +6,10 @@ cont = 0;
 cuentatras = [];
 pause = false;
 
+document.body.addEventListener("click", function() {
+    sonido('laser');
+}, false);
+
 puntuaciones = document.cookie.split(";");
 puntuacion = setInterval(sumarpuntos, 500);
 intervalo = setInterval(create_asteroid, tiempo);
@@ -62,6 +66,7 @@ function create_asteroid() {
 
 //Función que elimina el asteroide y su contador
 function delete_asteroid(objeto) {
+    sonido('expl');
     asteroid = document.getElementById(objeto.id);
     asteroid.parentNode.removeChild(asteroid);
     clearTimeout(cuentatras[objeto.id]);
@@ -159,4 +164,13 @@ function game_over() {
     setTimeout(() => {
         window.location.href = "index.html";
     }, 5000);
+}
+
+function sonido(valor) {
+    var audio = new Audio('./sound/laser.mp3');
+    audio.play();
+    if (valor == "expl") {
+        audio = new Audio('./sound/explosion.wav');
+        audio.play();
+    }
 }
