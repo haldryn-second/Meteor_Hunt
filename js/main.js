@@ -4,6 +4,7 @@ puntos = 0;
 tiempo = 3000;
 cont = 0;
 cuentatras = [];
+pause = false;
 
 puntuaciones = document.cookie.split(";");
 puntuacion = setInterval(sumarpuntos, 500);
@@ -87,7 +88,9 @@ function pausar() {
     clearInterval(puntuacion);
     clearInterval(intervalo);
     asteroids = document.getElementsByTagName("img");
-    puntos = puntos / 2;
+    if (pause == false) {
+        puntos = puntos / 2;
+    }
     for (i = 0; i < asteroids.length; i++) {
         asteroid = asteroids[i];
         clearInterval(cuentatras[asteroid.id])
