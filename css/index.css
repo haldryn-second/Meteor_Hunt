@@ -24,25 +24,25 @@ div {
 
 @-webkit-keyframes bg-scrolling-reverse {
     100% {
-        background-position: 0px 50px;
+        background-position: 200px 200px;
     }
 }
 
 @-moz-keyframes bg-scrolling-reverse {
     100% {
-        background-position: 0px 50px;
+        background-position: 200px 200px;
     }
 }
 
 @-o-keyframes bg-scrolling-reverse {
     100% {
-        background-position: 0px 50px;
+        background-position: 200px 200px;
     }
 }
 
 @keyframes bg-scrolling-reverse {
     100% {
-        background-position: 0px 50px;
+        background-position: 200px 200px;
     }
 }
 
@@ -69,7 +69,7 @@ h1 {
     text-align: center;
     margin: 0 auto;
     margin-bottom: 0.4em;
-    width: 50%;
+    width: 100%;
     font-family: 'Cyberspace';
     font-size: 4em;
     background: rgb(0, 1, 255);

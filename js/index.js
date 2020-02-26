@@ -6,6 +6,9 @@ label_ing = document.getElementById("label_ing");
 function validar() {
 
     label_reg.innerHTML = "";
+	
+	
+	///////////////EXPRESIONES REGULARES///////////////
 
     expreg_nombre = new RegExp(/^[A-Z]{3}$/);
     nombre = document.getElementById("nom_usu").value
@@ -41,6 +44,7 @@ function validar() {
     if (fallos > 0) return false;
     else {
         var usu = document.getElementById("nom_usu").value;
+		///////////////USO DE COOKIES///////////////
         if (buscar_usu_simple(usu) == false) {
             createCookie(usu, usu);
             createCookie("pass_" + usu, document.getElementById("passw").value);
@@ -54,12 +58,13 @@ function validar() {
     }
 }
 
-
+///////////////USO DE COOKIES///////////////
 //Función que añade datos al archivo cookies que expiran en varios meses
 function createCookie(cookieName, cookieValue) {
     document.cookie = cookieName + "=" + cookieValue + "; expires=Mon, 1 Jun 2020 12:00:00 UTC";
 }
 
+///////////////USO DE COOKIES///////////////
 //Función que busca si un usuario existe o no en el archivo cookies
 function buscar_usu() {
     label_ing.innerHTML = "";
@@ -92,6 +97,7 @@ function buscar_usu() {
     }
 }
 
+///////////////USO DE COOKIES///////////////
 //Función similar a la anterior pero en cuanto encuentra si el usuario existe o no en las cookies devuelve un true o false
 function buscar_usu_simple(nombre_usu) {
     encontrado = false;
@@ -111,6 +117,7 @@ function buscar_usu_simple(nombre_usu) {
     else return false;
 }
 
+///////////////USO DE COOKIES///////////////
 //Función que a partir de un nombre de usuario y una contraseña, busca en el registro de cookies si ambos coinciden, en caso afirmativo, el formulario es validado y se crea una variable de sesión con el nombre del usuario
 function buscar_contra(nombre_usu, contra_usu) {
     encontrado = false;
@@ -141,6 +148,8 @@ function buscar_contra(nombre_usu, contra_usu) {
     }
 }
 
+
+///////////////VALIDACIÓN DE TECLAS PULSADAS///////////////
 //Funciones que filtran carácteres que son pasados por eventos de teclado
 function letra_usu(evento) {
     evn_char = window.event.charCode || evento.charCode;
@@ -169,6 +178,7 @@ function reg_ing(valor) {
     }
 }
 
+///////////////USO DE COOKIES///////////////
 //Función extra para comprobar que las cookies se guardaban correctamente durante las diversas fases de prueba
 function mostrar_cook() {
     texto = "";

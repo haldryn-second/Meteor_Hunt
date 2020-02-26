@@ -14,6 +14,7 @@ puntuaciones = document.cookie.split(";");
 puntuacion = setInterval(sumarpuntos, 500);
 intervalo = setInterval(create_asteroid, tiempo);
 
+///////////////USO DE COOKIES///////////////
 //Se accede a las coockies guardadas para conocer la mejor puntuación del jugador (0 en caso de nuevo jugador), mostrarla por pantalla y ser usada en cuanto la partida finalice
 for (j = 0; j < puntuaciones.length; j++) {
 
@@ -27,6 +28,7 @@ for (j = 0; j < puntuaciones.length; j++) {
     }
 }
 
+///////////////EVENTO DE RATÓN///////////////
 //Función que, mediante el evento onmouseover en el body, asigna un ancho y un alto a un par de divs que hacen el efecto de mirilla para apuntar
 function position(x) {
     evn_web_x = window.event.clientX || x.clientX;
@@ -35,6 +37,7 @@ function position(x) {
     document.getElementById("xaxis").style.width = evn_web_x + "px";
     document.getElementById("yaxis").style.height = evn_web_y + "px";
 }
+
 
 //Función que crea asteroides; estos son imágenes con animación que son situados en un lugar aleatorio dentro del body. Cada asteroide tiene asignado un id y mediante variables dinámicas una cuenta atrás cuya única manera de desactivarla es pulsando sobre la imagen
 function create_asteroid() {
@@ -72,6 +75,7 @@ function delete_asteroid(objeto) {
     clearTimeout(cuentatras[objeto.id]);
 }
 
+///////////////EVENTO DE TECLADO///////////////
 //Función que espera la entrada de las letra P (para activar la función pausar) y R (para la función reanudar)
 function letra(evento) {
     evn_keycode = window.event.keyCode || evento.keyCode;
@@ -155,6 +159,7 @@ function game_over() {
     clearInterval(puntuacion);
     document.getElementById("game_over").style.display = "inline";
 
+///////////////USO DE COOKIES///////////////
     if (puntos_base < puntos) {
         document.cookie = "score_" + usu + "=" + puntos + "; expires=Mon, 1 Jun 2020 12:00:00 UTC";
         document.getElementById("game_over").innerHTML = "<h1>HAS PERDIDO</h1><br><h3>NUEVO RECORD REGISTRADO</h3>";
